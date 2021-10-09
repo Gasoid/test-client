@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <div>Hello, World</div>
       <Editor height="90vh" options={{
-        wordWrap: true
+        wordWrap: "on"
       }} theme="vs-dark" loading={isLoading} defaultLanguage="json" value={JSON.stringify(data)} />
     </div>
   );
