@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { QueryClientProvider, QueryClient } from 'react-query';
 import './index.css';
 import App from './App';
+import SettingsProvider from './providers/settings';
 import reportWebVitals from './reportWebVitals';
+
+
+const queryClient = new QueryClient()
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <SettingsProvider>
+        <App />
+      </SettingsProvider>
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
